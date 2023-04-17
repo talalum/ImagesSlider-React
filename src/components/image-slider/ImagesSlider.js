@@ -1,25 +1,12 @@
-import { useState } from "react";
-import { RxDotFilled, RxCaretRight, RxCaretLeft } from 'react-icons/rx';
-import './App.css';
-import './Slider.css';
-
+import { RxDotFilled, RxCaretRight, RxCaretLeft } from "react-icons/rx";
+import "./slider.css";
+import useSlide from "../../hooks/useslide";
 
 const ImagesSlider = ({ slides }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const goBack = () => {
-    const newIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const goNext = () => {
-    const newIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex);
-  };
+  const { currentIndex, goBack, goNext, goToSlide } = useSlide({
+    amountOfSlides: Object.keys(slides).length,
+    shouldLoop: true,
+  });
 
   const slideStylesWithBackground = {
     height: "100%",
@@ -46,12 +33,12 @@ const ImagesSlider = ({ slides }) => {
           <div
             className="dot"
             key={slideIndex}
-            onClick={() => goToSlide(slideIndex)}>
+            onClick={() => goToSlide(slideIndex)}
+          >
             <RxDotFilled />
           </div>
         ))}
       </div>
-
     </div>
   );
 };

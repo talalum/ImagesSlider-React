@@ -1,6 +1,6 @@
 import './App.css';
-import ImagesSlider from './ImagesSlider'
-import './Slider.css'
+import ImagesSlider from './components/image-slider/ImagesSlider'
+import './components/image-slider/slider.css'
 
 function App() {
   const slides = [
