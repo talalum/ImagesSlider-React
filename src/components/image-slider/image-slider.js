@@ -1,11 +1,11 @@
 import { RxCaretRight, RxCaretLeft } from "react-icons/rx";
 import "./slider.css";
-import useSlide from "../../hooks/use-slider";
+import useSlider from "../../hooks/use-slider";
 import NavigationDots from "../navigation-dots/navigation-dots";
 
 const ImagesSlider = ({ slides }) => {
   console.log("ImagesSlider");
-  const { currentIndex, goBack, goNext, goToSlide } = useSlide({
+  const { currentIndex, goBack, goNext, goToSlide } = useSlider({
     amountOfSlides: Object.keys(slides).length,
     shouldLoop: false,
   });

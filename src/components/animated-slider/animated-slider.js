@@ -2,19 +2,21 @@ import React from "react";
 import NavigationDots from "../navigation-dots/navigation-dots";
 import { RxCaretRight, RxCaretLeft } from "react-icons/rx";
 import "../image-slider/slider.css";
-import useSlide from "../../hooks/use-slider";
-import './animated-slider.css'
+import UseSlider from "../../hooks/use-slider";
+import "./animated-slider.css";
 
-const AnimatedSlider = ({ slides, parentWidth, children }) => {
+const AnimatedSlider = ({ parentWidth, children }) => {
   console.log("AnimatedSlider");
-  const { currentIndex, goBack, goNext, goToSlide } = useSlide({
-    amountOfSlides: Object.keys(slides).length,
+  console.log(children);
+  console.log(React.Children.toArray(children));
+  // console.log(React.Children.toArray(children));
+  const { currentIndex, goBack, goNext, goToSlide } = UseSlider({
+    amountOfSlides: children.length,
     shouldLoop: true,
   });
 
-
   const slidesContainerStyles = {
-    width: parentWidth * slides.length,
+    width: parentWidth * children.length,
     transform: `translateX(${-(currentIndex * parentWidth)}px)`,
   };
 
@@ -22,7 +24,7 @@ const AnimatedSlider = ({ slides, parentWidth, children }) => {
     display: "flex",
     height: "100%",
     transition: "transform ease-out 0.2s",
-    backgroundImage: `url(${slides[slideIndex].url})`,
+    backgroundImage: `url(${React.Children.toArray(children)[slideIndex].props.url})`,
     width: `${parentWidth}px`,
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -40,16 +42,17 @@ const AnimatedSlider = ({ slides, parentWidth, children }) => {
       </div>
       <div className="slides-container-overflow">
         <div style={slidesContainerStyles} className="slides-container">
-          {slides.map((_, slideIndex) => (
-            <div
-              key={slideIndex}
-              style={getSlideStyles(slideIndex)}
-            ></div>
-          ))}
+          {React.Children.map(children, (element, idx) => {
+            return (
+              <div style={getSlideStyles(idx)}>
+                <img src={element.props.url} />
+              </div>
+            );
+          })}
         </div>
       </div>
       <NavigationDots
-        slides={slides}
+        slides={React.Children.toArray(children)}
         currentSlideIndex={currentIndex}
         goToSlide={goToSlide}
       />
