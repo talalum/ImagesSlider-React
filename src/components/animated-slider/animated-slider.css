@@ -1,0 +1,11 @@
+.slides-container-overflow {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .slides-container {
+    display: flex;
+    height: 100%;
+    transition: transform ease-out 0.2s;
+    
+  }

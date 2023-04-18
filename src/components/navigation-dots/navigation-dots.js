@@ -4,7 +4,7 @@ import './navigation-dots.css'
 const NavigationDots = ({slides, currentSlideIndex, goToSlide}) => {
     console.log("NavigationDots");
   return (
-     <div className="dotsContainer">
+     <div className="dots-container">
         {slides.map((slide, slideIndex) => (
           <button
             className={'dot ' + (currentSlideIndex === slideIndex ? 'selected-button' : '')}

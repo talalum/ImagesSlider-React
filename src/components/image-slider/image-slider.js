@@ -22,10 +22,10 @@ const ImagesSlider = ({ slides }) => {
   return (
     <div className="slider">
       <div>
-        <div onClick={goBack} className="leftArrow">
+        <div onClick={goBack} className="left-arrow">
           <RxCaretLeft />
         </div>
-        <div onClick={goNext} className="rightArrow">
+        <div onClick={goNext} className="right-arrow">
           <RxCaretRight />
         </div>
       </div>

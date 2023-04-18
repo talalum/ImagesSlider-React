@@ -2,3 +2,8 @@
   text-align: center;
 }
 
+.slider-container {
+  width: 750px;
+  height: 40vw;
+  margin: 0 auto;
+}
