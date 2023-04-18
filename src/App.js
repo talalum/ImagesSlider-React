@@ -1,5 +1,6 @@
 import "./App.css";
-import ImagesSlider from "./components/image-slider/image-slider";
+import AnimatedSlider from "./components/animated-slider/animated-slider";
+// import ImagesSlider from "./components/image-slider/image-slider";
 import "./components/image-slider/slider.css";
 
 function App() {
@@ -11,7 +12,11 @@ function App() {
 
   return (
     <div className="slider-container">
-      <ImagesSlider slides={slides} />
+      <AnimatedSlider slides={slides} parentWidth={750} >
+        <div></div>
+        <div></div>
+        <div></div>
+      </AnimatedSlider>
     </div>
   );
 }
