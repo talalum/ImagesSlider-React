@@ -1,0 +1,25 @@
+button {
+    height: 15px;
+    width: 15px;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 2px;
+    border-color: transparent;
+  }
+  
+ .selected-button{
+    background-color: rgb(171, 219, 249);
+ }
+
+ .dot {
+    margin: 0 3px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.slider-container {
+    width: 100vw;
+    height: 40vw;
+    margin: 0 auto;
+}

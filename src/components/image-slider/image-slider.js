@@ -1,11 +1,13 @@
-import { RxDotFilled, RxCaretRight, RxCaretLeft } from "react-icons/rx";
+import { RxCaretRight, RxCaretLeft } from "react-icons/rx";
 import "./slider.css";
-import useSlide from "../../hooks/useslide";
+import useSlide from "../../hooks/use-slider";
+import NavigationDots from "../navigation-dots/navigation-dots";
 
 const ImagesSlider = ({ slides }) => {
+  console.log("ImagesSlider");
   const { currentIndex, goBack, goNext, goToSlide } = useSlide({
     amountOfSlides: Object.keys(slides).length,
-    shouldLoop: true,
+    shouldLoop: false,
   });
 
   const slideStylesWithBackground = {
@@ -28,17 +30,7 @@ const ImagesSlider = ({ slides }) => {
         </div>
       </div>
       <div style={slideStylesWithBackground}></div>
-      <div className="dotsContainer">
-        {slides.map((slide, slideIndex) => (
-          <div
-            className="dot"
-            key={slideIndex}
-            onClick={() => goToSlide(slideIndex)}
-          >
-            <RxDotFilled />
-          </div>
-        ))}
-      </div>
+      <NavigationDots slides={slides} currentSlideIndex={currentIndex} goToSlide={goToSlide} />
     </div>
   );
 };

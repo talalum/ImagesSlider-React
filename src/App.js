@@ -1,6 +1,6 @@
-import './App.css';
-import ImagesSlider from './components/image-slider/ImagesSlider'
-import './components/image-slider/slider.css'
+import "./App.css";
+import ImagesSlider from "./components/image-slider/image-slider";
+import "./components/image-slider/slider.css";
 
 function App() {
   const slides = [
@@ -10,7 +10,7 @@ function App() {
   ];
 
   return (
-    <div className='slider-container'>
+    <div className="slider-container">
       <ImagesSlider slides={slides} />
     </div>
   );

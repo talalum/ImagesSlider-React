@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-const UseSlide = ({ amountOfSlides, shouldLoop }) => {
+const useSlider = ({ amountOfSlides, shouldLoop }) => {
+  console.log("useSlide");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goBack = () => {
@@ -13,7 +14,7 @@ const UseSlide = ({ amountOfSlides, shouldLoop }) => {
   };
 
   const goNext = () => {
-    const isLastSlide = currentIndex === amountOfSlides - 1;
+    const isLastSlide = currentIndex === (amountOfSlides - 1);
     let newIndex = currentIndex + 1;
     if (isLastSlide && shouldLoop) {
       newIndex = isLastSlide ? 0 : currentIndex + 1;
@@ -35,4 +36,4 @@ const UseSlide = ({ amountOfSlides, shouldLoop }) => {
   };
 };
 
-export default UseSlide;
+export default useSlider;
