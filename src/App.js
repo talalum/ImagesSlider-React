@@ -4,18 +4,24 @@ import AnimatedSlider from "./components/animated-slider/animated-slider";
 import "./components/image-slider/slider.css";
 
 function App() {
-  // const slides = [
-  //   { url: "https://escales.ponant.com/wp-content/uploads/2020/12/plage.jpg" },
-  //   { url: "https://cdn.britannica.com/25/123125-050-8E6C8227/rowboat.jpg" },
-  //   { url: "https://ggsc.s3.amazonaws.com/images/uploads/Forest_in_Japan.jpg" },
-  // ];
 
   return (
     <div className="slider-container">
-      <AnimatedSlider parentWidth={750} >
-        <div url={"https://escales.ponant.com/wp-content/uploads/2020/12/plage.jpg" }></div>
-        <div url={"https://cdn.britannica.com/25/123125-050-8E6C8227/rowboat.jpg"}></div>
-        <div url={"https://ggsc.s3.amazonaws.com/images/uploads/Forest_in_Japan.jpg"}></div>
+      <AnimatedSlider parentWidth={750}>
+        <div>
+          <img src="https://escales.ponant.com/wp-content/uploads/2020/12/plage.jpg"></img>
+          {/* <h2>LKJKFLJFLK</h2> */}
+        </div>
+        <div>
+          <p>AAAAA</p>
+        </div>
+        <div>
+          <ul>
+            <li>a</li>
+            <li>b</li>
+            <li>c</li>
+          </ul>
+        </div>
       </AnimatedSlider>
     </div>
   );

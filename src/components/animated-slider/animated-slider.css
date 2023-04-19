@@ -8,3 +8,13 @@
   height: 100%;
   transition: transform ease-out 0.2s;
 }
+
+.slide{
+  display: flex;
+  height: 100%;
+  transition: transform ease-out 0.2s;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  background-color: rgb(255, 248, 233);
+}
