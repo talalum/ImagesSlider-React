@@ -4,7 +4,7 @@ import "./navigation-dots.css";
 const NavigationDots = ({ amountOfDots, currentDotIndex, goToDot }) => {
   console.log("NavigationDots");
 
-  const threeHeaders = Array.from({ length: amountOfDots }, (_, dotIndex) => {
+  const jsxButtonArray = Array.from({ length: amountOfDots }, (_, dotIndex) => {
     return (
       <button
         key={dotIndex}
@@ -16,11 +16,9 @@ const NavigationDots = ({ amountOfDots, currentDotIndex, goToDot }) => {
     );
   });
 
-  console.log(threeHeaders);
-
   return (
     <div className="dots-container">
-      {threeHeaders}
+      {jsxButtonArray}
     </div>
   );
 };
